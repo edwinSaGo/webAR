@@ -28,7 +28,7 @@
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
           id="avatar"
-          rotation="90 0 0"
+          rotation="0 0 0"
           position="0 0 0"
           scale="0.1 0.1 0.1"
           src="#avatarModel"
@@ -46,11 +46,13 @@
 
         if (isMobile) {
           // Ajuste específico para móviles
+          model.setAttribute("rotation", "0 0 0")
           model.setAttribute("position", "0 -1 0");
           model.setAttribute("scale", "0.1 0.1 0.1");
           console.log("Modo móvil activado: posición ajustada.");
         } else {
           // Ajuste para escritorio
+          model.setAttribute("rotation", "90 0 0")
           model.setAttribute("position", "0 0 0");
           model.setAttribute("scale", "0.1 0.1 0.1");
           console.log("Modo escritorio activado: posición por defecto.");
