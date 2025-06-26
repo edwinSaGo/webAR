@@ -31,5 +31,22 @@
         </a-gltf-model>
       </a-entity>
     </a-scene>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const model = document.querySelector("a-gltf-model");
+
+    // Detectar si estás en móvil
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // Asignar posición según dispositivo
+    if (isMobile) {
+      model.setAttribute("position", "0 -0.3 0");  // Más bajo para móvil
+      model.setAttribute("scale", "0.1 0.1 0.1");   // Escala igual o ajustada
+    } else {
+      model.setAttribute("position", "0 0 0");      // Centrado en PC
+      model.setAttribute("scale", "0.1 0.1 0.1");
+    }
+  });
+</script>
   </body>
 </html>
